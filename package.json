@@ -1,0 +1,16 @@
+{
+  "name": "ecs36c-sq2023-discussions",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "marp discussion*.md",
+    "build-pptx": "marp --pptx discussion*.md",
+    "build-pdf": "marp --pdf discussion*.md"
+  },
+  "keywords": [],
+  "author": "Ethan He",
+  "license": "ISC",
+  "devDependencies": {
+    "@marp-team/marp-cli": "^2.5.0"
+  }
+}

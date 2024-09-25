@@ -85,10 +85,7 @@ int main() {
 ```
 
 What is the output?
-
----
-
-0. Why? What's wrong?
+* 0
 
 ---
 
@@ -139,9 +136,7 @@ Student *create_student(std::string name) {
 }
 ```
 
----
-
-This is a [dangling pointer](https://en.wikipedia.org/wiki/Dangling_pointer#:~:text=Dangling%20pointers%20and%20wild%20pointers, resolve%20to%20a%20valid%20destination.).
+* [dangling pointer](https://en.wikipedia.org/wiki/Dangling_pointer#:~:text=Dangling%20pointers%20and%20wild%20pointers)
 
 ---
 
@@ -160,13 +155,13 @@ Student *create_student(std::string name) {
 
 ---
 
-| Feature                 | Stack          | Heap                     |
-|:------------------------|:---------------|:-------------------------|
-| Allocate                | local variable | `malloc` / `new`         |
+| Feature                 | Stack          | Heap              |
+| :---------------------- | :------------- | :---------------- |
+| Allocate                | local variable | `malloc` / `new`  |
 | Deallocate              | Automatic      | `free` / `delete` |
-| Access time             | Fast           | Slower                   |
-| Resize allocated memory | Not supported  | `realloc`                |
-| Structure               | Linear         | Fragment                 |
+| Access time             | Fast           | Slower            |
+| Resize allocated memory | Not supported  | `realloc`         |
+| Structure               | Linear         | Fragment          |
 
 ---
 
