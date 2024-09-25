@@ -39,7 +39,7 @@ T 08:00–09:00, Watershed 2211
 ## TA
 
 * Ethan He (me):
-  +  M  2:30 PM - 4:30 PM (time is subject to change)
+  +  M  2:30 PM - 4:30 PM
   +  Kemper 53
 * Jicheng Wang
   + TBD
