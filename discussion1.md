@@ -41,9 +41,9 @@ T 08:00–09:00, Watershed 2211
 * Ethan He (me):
   +  M  2:30 PM - 4:30 PM
   +  Kemper 53
-* Jicheng Wang
-  + TBD
-  + TBD
+* Jeremy Wang
+  +  T  12:00 PM - 2:00 PM
+  +  Kemper 47
 ---
 
 # Homework
