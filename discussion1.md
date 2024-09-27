@@ -42,8 +42,8 @@ T 08:00–09:00, Watershed 2211
   +  M  2:30 PM - 4:30 PM
   +  Kemper 53
 * Jeremy Wang
-  +  T  12:00 PM - 2:00 PM
-  +  Kemper 47
+  +  W  3:30 PM - 5:30 PM
+  +  Kemper 53
 ---
 
 # Homework
