@@ -353,7 +353,7 @@ public:
 };
 ```
 
-this definition is provided in [lib/LinkedListNode.hpp](https://github.com/ecs36c-sq2023/hw1/blob/main/lib/LinkedListNode.hpp).
+this definition is provided in [lib/LinkedListNode.hpp](https://github.com/ecs36c-fq2024/hw1/blob/main/lib/LinkedListNode.hpp).
 
 ---
 
@@ -435,7 +435,7 @@ the return type of the function should be its desired type **or** nothing.
 
 ---
 
-In out case, `removeHead()` should return Just a value of type `T` or nothing, 
+In our case, `removeHead()` should return Just a value of type `T` or nothing, 
 so
 
 ```cpp
@@ -459,10 +459,10 @@ def square(number: int | float) -> int | float:
 ```
 
 ---
-
+<!-- 
 What about `pop()/top()` function of stack?
 
----
+--- -->
 
 ## GoogleTest
 
