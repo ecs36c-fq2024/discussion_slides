@@ -3,7 +3,7 @@ marp: true
 math: mathjax
 ---
 
-# Discussion 6
+# Discussion 5
 
 Jeremy Wang
 
@@ -251,6 +251,118 @@ RB-INSERT(T, z)
 1. Parent and Uncle Red
 2. Parent Red, Uncle Black, Left Child
 3. Parent Red, Uncle Black, Right Child
+
+---
+### We use the RB-INSERT-FIXUP procedure to restore the Red-Black properties.
+```
+RB-INSERT-FIXUP（T,z）
+ 1 while color[p[z]] = RED  
+ 2     do if p[z] = left[p[p[z]]]  
+ 3           then y ← right[p[p[z]]]  
+ 4                if color[y] = RED  
+ 5                   then color[p[z]] ← BLACK                    ▹ Case 1  
+ 6                        color[y] ← BLACK                       ▹ Case 1  
+ 7                        color[p[p[z]]] ← RED                   ▹ Case 1  
+ 8                        z ← p[p[z]]                            ▹ Case 1  
+ 9                   else if z = right[p[z]]  
+10                           then z ← p[z]                       ▹ Case 2  
+11                                LEFT-ROTATE(T, z)              ▹ Case 2  
+12                           color[p[z]] ← BLACK                 ▹ Case 3  
+13                           color[p[p[z]]] ← RED                ▹ Case 3  
+14                           RIGHT-ROTATE(T, p[p[z]])            ▹ Case 3  
+15           else (same as then clause  
+                         with "right" and "left" exchanged)  
+16 color[root[T]] ← BLACK  
+```
+---
+### Insertion Fix-up Case 1
+**Situation**:
+
+    - The parent of z is red.
+    - The uncle y of z is red.
+    - Both the parent and uncle are red.
+**Actions**:
+
+    - Recolor the parent and uncle to black.
+    - Recolor the grandparent to red.
+    - Move z up to the grandparent.
+    - Repeat the process starting from the new z.
+
+**Code**:
+```
+5   color[p[z]] ← BLACK
+6   color[y] ← BLACK
+7   color[p[p[z]]] ← RED
+8   z ← p[p[z]]
+```
+---
+
+
+## Insertion Fix-up Case 1
+
+| Before Fix-up                                           | After Fix-up                                            |
+|---------------------------------------------------------|---------------------------------------------------------|
+| ![Before Fix-up](./image/disc5/insertion_case1_before.png) | ![After Fix-up](./image/disc5/insertion_case1_after.png) |
+
+---
+
+### Insertion Fix-up Case 2
+**Situation**:
+
+    - The parent of z is red.
+    - The uncle y of z is black.
+    - z is the right child of its parent.
+**Actions**:
+
+    - Set z to its parent p[z].
+    - Left Rotate at p[z].
+    - This transforms the situation into Case 3.
+
+**Code**:
+```
+9   else if z = right[p[z]]
+10  then z ← p[z] 
+11  LEFT-ROTATE(T, z)
+```
+
+---
+
+## Insertion Fix-up Case 2
+
+| Before Fix-up                                           | After Fix-up                                            |
+|---------------------------------------------------------|---------------------------------------------------------|
+| ![Before Fix-up](./image/disc5/insertion_case2_before.png) | ![After Fix-up](./image/disc5/insertion_case2_after.png) |
+
+---
+
+### Insertion Fix-up Case 3
+
+**Situation**:
+
+- The parent of `z` is **red**.
+- The uncle `y` is **black**.
+- `z` is the **left child** of its parent.
+
+**Actions**:
+
+- Recolor the parent `p[z]` to **black**.
+- Recolor the grandparent `p[p[z]]` to **red**.
+- **Right Rotate** at the grandparent `p[p[z]]`.
+
+**Code**:
+
+```
+12       color[p[z]] ← BLACK
+13       color[p[p[z]]] ← RED
+14       RIGHT-ROTATE(T, p[p[z]])
+```
+---
+
+## Insertion Fix-up Case 3
+
+| Before Fix-up                                           | After Fix-up                                            |
+|---------------------------------------------------------|---------------------------------------------------------|
+| ![Before Fix-up](./image/disc5/insertion_case3_before.png) | ![After Fix-up](./image/disc5/insertion_case3_after.png) |
 
 ---
 Thank you!
