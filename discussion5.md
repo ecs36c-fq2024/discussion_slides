@@ -318,7 +318,7 @@ RB-INSERT-FIXUP（T,z）
 **Actions**:
 
     - Set z to its parent p[z].
-    - Left Rotate at p[z].
+    - Left Rotate at new z（previous p[z]）.
     - This transforms the situation into Case 3.
 
 **Code**:
