@@ -28,6 +28,7 @@ Jeremy Wang
 - Pre-order
 - In-order
 - Post-order
+- Level-order
 
 ---
 
@@ -50,6 +51,7 @@ In-order: 2, 7, 5, 6, 11, 1, 9, 5, 9
 
 Post-order: 2, 5, 11, 6, 7, 5, 9, 9, 1
 
+Level-order: 1, 7, 9, 2, 6, 5, 9, 5, 11
 ---
 
 ## Tree Traversal
