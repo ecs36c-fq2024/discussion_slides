@@ -265,6 +265,14 @@ Jeremy Wang
   - Unbalanced trees degrade to linked lists.
 
 ---
+![width:600px](./image/disc6/bst1.png)
+https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/description/
+
+---
+![width:600px](./image/disc6/bst2.png)
+https://leetcode.com/problems/binary-tree-level-order-traversal-ii/description/
+
+---
 
 # 5. Red-Black Trees
 
@@ -279,6 +287,7 @@ Jeremy Wang
   3. All leaves (NIL nodes) are **black**.
   4. Red nodes cannot have red children (no two reds in a row).
   5. Every path from a node to its descendant NIL nodes has the same number of black nodes.
+
 
 ---
 
