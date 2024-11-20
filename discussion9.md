@@ -109,10 +109,16 @@ Given the following graph:
 ![Graph](./image/disc9/bfs.png)
 
 - Starting from node `0`, the BFS traversal order is:
-  - `0 -> 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7`
+  - `0 -> 1 -> 2 -> 3 -> 4 -> 5 -> 6 ->`
 
 ---
+## BFS Example
 
+![Graph](./image/disc9/bfs_ex.png)
+
+https://leetcode.com/problems/same-tree/
+
+---
 ## BFS Applications
 
 - **Shortest Path in Unweighted Graphs**
@@ -176,6 +182,15 @@ Given the same graph:
 
 - Starting from node `0`, one possible DFS traversal order is:
   - `0 -> 1 -> 4 -> 5 -> 2 -> 6 -> 3 ->7`
+
+---
+## DFS Example
+https://leetcode.com/problems/path-sum/description/?envType=problem-list-v2&envId=depth-first-search
+
+![Graph](./image/disc9/dfs_ex.png)
+
+
+
 ---
 
 ## DFS Applications
