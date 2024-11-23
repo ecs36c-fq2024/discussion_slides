@@ -219,6 +219,13 @@ fibs' = 0 : 1 : next fibs
     next (a : t@(b : _)) = (a + b) : next t
 ```
 
+In Haskell, we can define the Fibonacci sequence as an infinite list.
+
+fibs' is a list starting with 0 and 1, followed by the sum of the previous two numbers.
+The next function recursively computes the rest of the sequence.
+
+Using the !! operator, we can access the nth Fibonacci number without computing all previous ones eagerly.
+
 ---
 
 ### Cont.
@@ -377,6 +384,10 @@ where `_comparator` is specified in type `T`.
 
 polymorphism with limitation on Type Variable
 
+
+
+Ad-hoc polymorphism refers to function overloading or operator overloading, where functions can operate on different types based on specific implementations.
+
 ---
 
 ## "checked" Polymorphism
@@ -388,7 +399,11 @@ Therefore, bring the error to us as the developer is necessary.
 Newer (some actually older than C++) languages
 (Rust, for example) ship this feature with their standard prelude.
 
+---
+
 ### Any other than Rust?
+
+Languages like Rust use traits to enforce these constraints, ensuring that types used with certain functions or data structures meet the necessary requirements.
 
 ---
 
@@ -435,6 +450,16 @@ We know a list (vector) is `Iterable`, can we define
 
 ---
 
+## Iterable Tree?
+
+We know a list (vector) is `Iterable`, can we define
+[`Iterable` Tree](https://www.seas.upenn.edu/~cis5520/21fa/lectures/stub/02-trees/TreeFolds.html)?
+
+we can indeed define an iterator for a tree by implementing traversal algorithms like in-order, pre-order, or post-order traversal.
+Making a tree iterable allows us to use it in contexts where iteration is expected, such as in for loops or functional programming constructs.
+This can greatly enhance the flexibility and usability of tree data structures
+
+---
 # Additional Materials
 
 - [type_traits in C++](https://en.cppreference.com/w/cpp/header/type_traits)
