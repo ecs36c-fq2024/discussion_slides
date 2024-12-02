@@ -36,6 +36,23 @@ what is actually "behind" `x++`?
 
 ---
 
+## From HW3
+
+```cpp
+RandomAccessIter x = first;
+for (some loop) {
+  if (some condition) {
+    x++;
+  }
+}
+```
+
+what is actually "behind" `x++`?
+
+x++ advances the iterator to point to the next element in the collection.
+
+---
+
 ### [`std::next`](https://en.cppreference.com/w/cpp/iterator/next)
 
 is defined as
@@ -48,6 +65,11 @@ InputIt next(
 );
 ```
 
+In C++, the std::next function provides a way to advance an iterator.
+Definition breakdown:
+InputIt it: The iterator to advance.
+n: The number of positions to advance (default is 1).
+
 ---
 
 ### What about `std::distance`?
@@ -57,6 +79,8 @@ template< class InputIt >
 typename std::iterator_traits<InputIt>::difference_type
     distance(InputIt first, InputIt last);
 ```
+
+std::distance returns the number of increments needed to go from first to last
 
 ---
 
@@ -89,6 +113,10 @@ int main() {
 }
 ```
 
+Function is_finished compares the current iterator it to the end iterator end.
+
+In main(), we iterate over the vector xs and print each element along with whether we've finished iterating.
+
 ---
 
 ## Improvement?
@@ -107,6 +135,12 @@ std::optional<InputIt> next(
   typename std::iterator_traits<InputIt>::difference_type n = 1
 );
 ```
+
+By using std::optional, we can represent the possibility of the iterator reaching the end:
+
+If there's a next element, return it wrapped in std::optional.
+
+If not, return std::nullopt, indicating no further elements.
 
 ---
 
@@ -175,6 +209,8 @@ $$
 & F_n = F_{n-1} + F_{n-2}
 \end{aligned}
 $$
+
+Lazy evaluation is a concept where computations are deferred until their results are needed.
 
 ---
 
