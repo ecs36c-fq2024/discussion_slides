@@ -162,6 +162,14 @@ What are the properties of a Binary Search Tree?
 
 ---
 
+## B-Trees
+
+- Why B-Tree?
+
+B-Trees are balanced search trees designed for systems that read and write large blocks of data.
+
+---
+
 ### Properties of B-Trees
 
 If a B-tree has a _minimum degree_ $t$:
@@ -208,8 +216,8 @@ suppose $t = 2$,
 
 - Merge Sort
 - Quick Sort
-- Insertion Sort
-- Selection Sort
+- [Insertion Sort](https://www.geeksforgeeks.org/insertion-sort-algorithm/)
+- [Selection Sort](https://www.geeksforgeeks.org/selection-sort-algorithm-2/)
 
 ---
 
@@ -298,7 +306,56 @@ $$
 
 Comparing Adj List and Adj Matrix
 
+
 ---
+
+# Adjacency List Representation
+
+### Graph Adjacency List
+- **Node 0** → [(1, 3), (3, 7), (4, 8)]
+- **Node 1** → [(0, 3), (2, 1), (3, 4)]
+- **Node 2** → [(1, 1), (3, 2)]
+- **Node 3** → [(0, 7), (1, 4), (2, 2), (4, 3)]
+- **Node 4** → [(0, 8), (3, 3)]
+
+---
+
+### Explanation
+- Each node points to a list of tuples `(neighbor, weight)`.
+- Example:  
+  For Node 0:  
+  - It connects to Node 1 with weight 3.
+  - It connects to Node 3 with weight 7.
+  - It connects to Node 4 with weight 8.
+
+---
+
+# Adjacency Matrix Representation
+
+### Graph Adjacency Matrix
+|   | 0 | 1 | 2 | 3 | 4 |
+|---|---|---|---|---|---|
+| 0 | 0 | 3 | 0 | 7 | 8 |
+| 1 | 3 | 0 | 1 | 4 | 0 |
+| 2 | 0 | 1 | 0 | 2 | 0 |
+| 3 | 7 | 4 | 2 | 0 | 3 |
+| 4 | 8 | 0 | 0 | 3 | 0 |
+
+---
+
+# Explanation of Adjacency Matrix
+
+### Key Features
+- Each cell `(i, j)` in the matrix represents the weight of the edge between Node `i` and Node `j`.
+- A value of `0` indicates no direct edge exists between the nodes.
+
+### Example
+- `(0, 1)` = 3 → Edge exists between Node 0 and Node 1 with weight 3.
+- `(3, 4)` = 3 → Edge exists between Node 3 and Node 4 with weight 3.
+- `(2, 4)` = 0 → No edge exists between Node 2 and Node 4.
+
+---
+
 
 ### Pros & Cons?
 
@@ -369,6 +426,39 @@ subject to
 
 ---
 
+## Example Graph
+
+![Graph h:550](https://ucarecdn.com/a67cb888-aa0c-424b-8c7f-847e38dd5691/)
+
+---
+
+### Steps
+1. Sort edges by weight:
+   - (1, 2): 1
+   - (2, 3): 2
+   - (0, 1): 3
+   - (3, 4): 3
+   - (1, 3): 4
+   - (0, 3): 7
+   - (0, 4): 8
+
+---
+
+2. Initialize a disjoint set.
+
+3. Iterate through sorted edges:
+   - Add (1, 2): No cycle.
+   - Add (2, 3): No cycle.
+   - Add (0, 1): No cycle.
+   - Add (3, 4): No cycle.
+   - Stop when |V| - 1 edges added.
+
+### Resulting MST
+Edges: {(1, 2), (2, 3), (0, 1), (3, 4)}  
+Total Weight: 9
+
+---
+
 ## Prim
 
 ![Prim h:550](image/final/MST-Prim.png)
@@ -378,3 +468,36 @@ subject to
 ## Example Graph
 
 ![Graph h:550](https://ucarecdn.com/a67cb888-aa0c-424b-8c7f-847e38dd5691/)
+
+---
+
+### Steps
+1. Start from any node (e.g., Node 0).
+
+2. Initialize priority queue with edges from Node 0:
+   - (0, 1): 3
+   - (0, 3): 7
+   - (0, 4): 8
+
+3. Add minimum edge:
+   - Add (0, 1): Cost 3.
+   - Add edges from Node 1:
+     - (1, 2): 1
+     - (1, 3): 4
+
+---
+
+4. Add (1, 2): Cost 1.
+   - Add edges from Node 2:
+     - (2, 3): 2
+
+5. Add (2, 3): Cost 2.
+   - Add (3, 4): Cost 3.
+
+### Resulting MST
+Edges: {(0, 1), (1, 2), (2, 3), (3, 4)}  
+Total Weight: 9
+
+---
+
+Thank you! Good luck to all of you!
