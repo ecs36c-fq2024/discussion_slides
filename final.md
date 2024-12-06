@@ -500,4 +500,10 @@ Total Weight: 9
 
 ---
 
+Dijkstra algorithm
+
+https://www.w3schools.com/dsa/dsa_algo_graphs_dijkstra.php
+
+---
+
 Thank you! Good luck to all of you!
