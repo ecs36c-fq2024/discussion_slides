@@ -506,4 +506,10 @@ https://www.w3schools.com/dsa/dsa_algo_graphs_dijkstra.php
 
 ---
 
+Classic Dijkstra Algorithm Question
+
+https://leetcode.com/problems/network-delay-time/description/
+
+---
+
 Thank you! Good luck to all of you!
